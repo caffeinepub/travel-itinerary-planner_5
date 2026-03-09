@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Fraunces (Display) ─── */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── General Sans (Body) ─── */
+@font-face {
+  font-family: "General Sans";
+  src: url("/assets/fonts/GeneralSans.woff2") format("woff2");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* ── Travel Passport: Deep Navy + Electric Teal + Warm Gold ── */
+
+    /* Backgrounds */
+    --background: 0.12 0.018 245;
+    --foreground: 0.96 0.008 90;
+
+    /* Cards & surfaces */
+    --card: 0.155 0.022 245;
+    --card-foreground: 0.96 0.008 90;
+    --popover: 0.18 0.025 245;
+    --popover-foreground: 0.96 0.008 90;
+
+    /* Primary — electric teal */
+    --primary: 0.72 0.19 195;
+    --primary-foreground: 0.10 0.015 245;
+
+    /* Secondary — muted indigo */
+    --secondary: 0.22 0.03 250;
+    --secondary-foreground: 0.82 0.02 90;
+
+    /* Muted */
+    --muted: 0.20 0.025 250;
+    --muted-foreground: 0.58 0.025 250;
+
+    /* Accent — warm amber gold */
+    --accent: 0.78 0.17 75;
+    --accent-foreground: 0.12 0.015 245;
+
+    /* Destructive */
+    --destructive: 0.62 0.22 25;
+    --destructive-foreground: 0.96 0.008 90;
+
+    /* Borders */
+    --border: 0.28 0.03 250;
+    --input: 0.28 0.03 250;
+    --ring: 0.72 0.19 195;
+
+    /* Category colors */
+    --transport: 0.62 0.18 230;
+    --accommodation: 0.68 0.18 300;
+    --activity: 0.68 0.18 150;
+    --food: 0.72 0.17 55;
+
+    /* Charts */
+    --chart-1: 0.72 0.19 195;
+    --chart-2: 0.78 0.17 75;
+    --chart-3: 0.68 0.18 150;
+    --chart-4: 0.62 0.18 230;
+    --chart-5: 0.68 0.18 300;
+
+    /* Sidebar */
+    --sidebar: 0.10 0.015 245;
+    --sidebar-foreground: 0.96 0.008 90;
+    --sidebar-primary: 0.72 0.19 195;
+    --sidebar-primary-foreground: 0.10 0.015 245;
+    --sidebar-accent: 0.20 0.025 250;
+    --sidebar-accent-foreground: 0.82 0.02 90;
+    --sidebar-border: 0.28 0.03 250;
+    --sidebar-ring: 0.72 0.19 195;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    color-scheme: dark;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Fraunces", Georgia, serif;
+  }
+
+  .text-transport {
+    color: oklch(var(--transport));
+  }
+  .text-accommodation {
+    color: oklch(var(--accommodation));
+  }
+  .text-activity {
+    color: oklch(var(--activity));
+  }
+  .text-food {
+    color: oklch(var(--food));
+  }
+
+  .bg-transport\/10 {
+    background-color: oklch(var(--transport) / 0.12);
+  }
+  .bg-accommodation\/10 {
+    background-color: oklch(var(--accommodation) / 0.12);
+  }
+  .bg-activity\/10 {
+    background-color: oklch(var(--activity) / 0.12);
+  }
+  .bg-food\/10 {
+    background-color: oklch(var(--food) / 0.12);
+  }
+
+  .border-transport {
+    border-color: oklch(var(--transport) / 0.4);
+  }
+  .border-accommodation {
+    border-color: oklch(var(--accommodation) / 0.4);
+  }
+  .border-activity {
+    border-color: oklch(var(--activity) / 0.4);
+  }
+  .border-food {
+    border-color: oklch(var(--food) / 0.4);
+  }
+
+  /* Timeline dot colors */
+  .bg-transport {
+    background-color: oklch(var(--transport));
+  }
+  .bg-accommodation {
+    background-color: oklch(var(--accommodation));
+  }
+  .bg-activity {
+    background-color: oklch(var(--activity));
+  }
+  .bg-food {
+    background-color: oklch(var(--food));
+  }
+}
